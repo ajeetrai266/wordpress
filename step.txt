@@ -1,0 +1,35 @@
+#First Launch one EC2 Instance
+
+#Configure this Instance with Apache Webserver
+  -> yum install httpd -y
+  -> systemctl restart httpd
+  
+#Install Latest version PHP Interpreter
+  -> dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+  -> dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+  -> dnf module install php:remi-7.4
+  -> dnf install php-mysqlnd
+
+   #Check the Latest version of PHP
+   -> php -v
+   
+#Download PHP application name "WordPress"
+   -> wget https://wordpress.org/latest.tar.gz
+   -> tar -xzf latest.tar.gz
+   
+#SetUp a MySQL server using ‘ AWS RDS ’ service using Free Tier
+#and, and Create One Database in this MySQL server
+
+#now, Configure the wordPress in this file location
+   -> vim wordpress/wp-config-sample.php
+   
+#Deploy all the Wordpress folder into the "Root directory" of HTTPD server
+and, Restart the httpd service
+
+#and, Finally access the URL of this site
+and, provide some Database connection details and credentials..
+and, run the Installation
+and, create blog
+
+#now, "Wordpress" is ready..
+anybody can visit this sites/blog via link.
